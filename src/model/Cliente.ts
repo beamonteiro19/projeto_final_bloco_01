@@ -3,17 +3,16 @@ import { Produto } from "./Produto";
 export class Cliente extends Produto {
   private _nomeCliente: string;
   private _numeroCliente: number;
-  declare nome: any; //tava dando erro, tive que por o declare, que o vscode sugeriu
 
   constructor(
     id: number,
-    nome: string,
+    nomeProduto: string,
     preco: number,
     estoque: number,
     nomeCliente: string,
     numeroCliente: number
   ) {
-    super(id, nome, preco, estoque);
+    super(id, nomeProduto, preco, estoque);
     this._nomeCliente = nomeCliente;
     this._numeroCliente = numeroCliente;
   }
@@ -37,10 +36,10 @@ export class Cliente extends Produto {
   public visualizar(): void {
     console.log(`
 ****************************************************
-DADOS DA COMPRA
+DADOS DO PRODUTO
 ****************************************************
-Cliente: ${this._nomeCliente} (Nº ${this._numeroCliente})
-Produto: ${this.nome}
+ID: ${this.id}
+Nome: ${this.nomeProduto}
 Preço: R$ ${this.preco.toFixed(2)}
 Estoque disponível: ${this.estoque}
 ****************************************************

@@ -1,13 +1,14 @@
 import readlinesync = require("readline-sync");
 import { ProdutoController } from "./src/controller/ProdutoController";
 import { Cliente } from "./src/model/Cliente";
+import { colors } from "./src/util/Colors";
 
 const controller = new ProdutoController();
 
 let opcao, opcaoAdmin, opcaoCliente: number;
 
 do {
-  console.log(`
+  console.log(colors.fg.yellowstrong,`
 ###############################
 💻  BEA'S DESKTOP STORE - MENU
 ###############################
@@ -20,7 +21,7 @@ _______________________________
 _______________________________
   0 - Sair
 _______________________________
-`);
+`,colors.reset);
 
   opcao = Number(readlinesync.question("Digite a opção desejada: "));
 
@@ -28,7 +29,7 @@ _______________________________
     case 1:
       do {
         console.clear();
-        console.log(`
+        console.log(colors.fg.greenstrong,`
 ===============================
      ÁREA DE ADMINITRAÇÃO
 ===============================
@@ -38,7 +39,7 @@ _______________________________
 3 - Atualizar Produto
 4 - Remover Produto
 0 - Voltar
-`);
+`,colors.reset);
         opcaoAdmin = Number(readlinesync.question("Escolha uma opção: "));
 
         switch (opcaoAdmin) {
@@ -112,7 +113,7 @@ _______________________________
     case 2:
       do {
         console.clear();
-        console.log(`
+        console.log(colors.fg.magenta,`
 ===============================
         ÁREA DO CLIENTE
 ===============================
@@ -121,7 +122,7 @@ _______________________________
 2 - Ver Lista de Produtos
 3 - Realizar Compra
 0 - Voltar
-`);
+`,colors.reset);
         opcaoCliente = Number(readlinesync.question("Escolha uma opção: "));
 
         switch (opcaoCliente) {
