@@ -3,7 +3,7 @@ import { Produto } from "./Produto";
 export class Cliente extends Produto {
   private _nomeCliente: string;
   private _numeroCliente: number;
-  nome: any;
+  declare nome: any; //tava dando erro, tive que por o declare, que o vscode sugeriu
 
   constructor(
     id: number,
@@ -37,7 +37,7 @@ export class Cliente extends Produto {
   public visualizar(): void {
     console.log(`
 ****************************************************
-🧾 DADOS DA COMPRA
+DADOS DA COMPRA
 ****************************************************
 Cliente: ${this._nomeCliente} (Nº ${this._numeroCliente})
 Produto: ${this.nome}
